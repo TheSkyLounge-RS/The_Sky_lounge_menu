@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Sky Lounge | Menu</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background:
+                radial-gradient(circle at top right, rgba(128, 0, 32, 0.25), transparent 35%),
+                linear-gradient(135deg, #090909, #151515, #080808);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        ::selection {
+            background: #d4af37;
+            color: #111;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            min-height: 520px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.65),
+                    rgba(0,0,0,.88)
+                ),
+                radial-gradient(
+                    circle at center,
+                    #4d0017,
+                    #090909 70%
+                );
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(212,175,55,.25);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 1px solid rgba(212,175,55,.15);
+            border-radius: 50%;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            border: 2px solid #d4af37;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            color: #d4af37;
+            font-size: 32px;
+            font-family: "Cormorant Garamond", serif;
+            box-shadow: 0 0 30px rgba(212,175,55,.25);
+        }
+
+        .hero h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(55px, 10vw, 100px);
+            letter-spacing: 8px;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .hero h2 {
+            color: #d4af37;
+            letter-spacing: 7px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            margin-top: 18px;
+            color: #bbb;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .scroll-btn {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 12px 28px;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: .3s;
+        }
+
+        .scroll-btn:hover {
+            background: #d4af37;
+            color: #111;
+        }
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .controls {
+            width: min(1100px, 92%);
+            margin: -35px auto 50px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .search-box {
+            background: rgba(25,25,25,.9);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212,175,55,.25);
+            border-radius: 50px;
+            padding: 5px;
+            display: flex;
+            box-shadow: 0 15px 40px rgba(0,0,0,.4);
+        }
+
+        .search-box input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 15px 22px;
+            font-size: 15px;
+        }
+
+        .search-box input::placeholder {
+            color: #777;
+        }
+
+        /* =========================
+           CATEGORY BUTTONS
+        ========================= */
+
+        .categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .category-btn {
+            padding: 9px 17px;
+            background: #171717;
+            color: #aaa;
+            border: 1px solid #333;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: .3s;
+            font-family: inherit;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #d4af37;
+            color: #111;
+            border-color: #d4af37;
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        main {
+            width: min(1200px, 92%);
+            margin: auto;
+        }
+
+        .menu-section {
+            margin-bottom: 80px;
+            scroll-margin-top: 30px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-heading span {
+            color: #d4af37;
+            font-size: 12px;
+            letter-spacing: 4px;
+        }
+
+        .section-heading h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 48px;
+            margin-top: 5px;
+        }
+
+        .section-heading .line {
+            width: 60px;
+            height: 2px;
+            background: #d4af37;
+            margin: 12px auto;
+        }
+
+        /* =========================
+           MENU GRID
+        ========================= */
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .menu-card {
+            position: relative;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.06),
+                    rgba(255,255,255,.015)
+                );
+
+            border: 1px solid rgba(255,255,255,.08);
+            padding: 22px;
+            border-radius: 16px;
+            transition: .35s;
+            overflow: hidden;
+        }
+
+        .menu-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: #d4af37;
+            transition: .35s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212,175,55,.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,.4);
+        }
+
+        .menu-card:hover::before {
+            height: 100%;
+        }
+
+        .menu-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .menu-name {
+            font-size: 15px;
+            font-weight: 500;
+            color: #eee;
+        }
+
+        .menu-description {
+            color: #777;
+            font-size: 11px;
+            margin-top: 6px;
+        }
+
+        .price {
+            color: #d4af37;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .add-btn {
+            margin-top: 15px;
+            background: transparent;
+            border: 1px solid #444;
+            color: #aaa;
+            padding: 6px 13px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 11px;
+            transition: .3s;
+        }
+
+        .add-btn:hover {
+            border-color: #d4af37;
+            color: #d4af37;
+        }
+
+        /* =========================
+           ORDER PANEL
+        ========================= */
+
+        .order-panel {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 310px;
+            background: rgba(18,18,18,.96);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212,175,55,.3);
+            border-radius: 20px;
+            padding: 20px;
+            z-index: 20;
+            box-shadow: 0 20px 50px rgba(0,0,0,.6);
+
+            transform: translateY(130%);
+            transition: .4s;
+        }
+
+        .order-panel.show {
+            transform: translateY(0);
+        }
+
+        .order-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .order-title h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 27px;
+        }
+
+        .close-order {
+            background: none;
+            border: none;
+            color: #777;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #orderItems {
+            max-height: 220px;
+            overflow-y: auto;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #292929;
+            font-size: 12px;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 18px;
+            padding-top: 12px;
+            border-top: 1px solid #444;
+            font-weight: 600;
+        }
+
+        .total span:last-child {
+            color: #d4af37;
+        }
+
+        .order-now {
+            width: 100%;
+            margin-top: 15px;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            background: #d4af37;
+            color: #111;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* =========================
+           FLOATING ORDER
+        ========================= */
+
+        .floating-order {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #d4af37;
+            color: #111;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 15;
+            box-shadow: 0 10px 30px rgba(212,175,55,.3);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 100px;
+            padding: 70px 20px;
+            text-align: center;
+            border-top: 1px solid #252525;
+            background: #080808;
+        }
+
+        footer h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 42px;
+        }
+
+        footer p {
+            color: #777;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .social {
+            margin-top: 25px;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+
+        /* =========================
+           NO RESULTS
+        ========================= */
+
+        .no-results {
+            display: none;
+            text-align: center;
+            color: #777;
+            padding: 40px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width:600px) {
+
+            header {
+                min-height: 450px;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+                letter-spacing: 4px;
+            }
+
+            .hero h2 {
+                font-size: 13px;
+                letter-spacing: 4px;
+            }
+
+            .section-heading h2 {
+                font-size: 40px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .order-panel {
+                width: calc(100% - 30px);
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .floating-order {
+                right: 18px;
+                bottom: 18px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header>
+
+    <div class="hero">
+
+        <div class="logo">TSL</div>
+
+        <h1>THE SKY</h1>
+
+        <h2>LOUNGE</h2>
+
+        <p>ROOFTOP DINING • FOOD • COFFEE • MOCKTAILS</p>
+
+        <a href="#menu" class="scroll-btn">
+            EXPLORE MENU
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     SEARCH & FILTER
+========================= -->
+
+<div class="controls">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search your favourite dish..."
+        >
+
+    </div>
+
+    <div class="categories">
+
+        <button class="category-btn active" data-category="all">
+            All
+        </button>
+
+        <button class="category-btn" data-category="tea">
+            Tea
+        </button>
+
+        <button class="category-btn" data-category="coffee">
+            Coffee
+        </button>
+
+        <button class="category-btn" data-category="fish">
+            Fish
+        </button>
+
+        <button class="category-btn" data-category="chicken">
+            Chicken
+        </button>
+
+        <button class="category-btn" data-category="pasta">
+            Pasta
+        </button>
+
+        <button class="category-btn" data-category="momo">
+            Momo
+        </button>
+
+        <button class="category-btn" data-category="noodles">
+            Noodles
+        </button>
+
+        <button class="category-btn" data-category="rice">
+            Rice
+        </button>
+
+        <button class="category-btn" data-category="drinks">
+            Drinks
+        </button>
+
+        <button class="category-btn" data-category="dessert">
+            Dessert
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<main id="menu">
+
+
+<!-- TEA -->
+
+<section class="menu-section" data-section="tea">
+
+    <div class="section-heading">
+        <span>HOT & COLD</span>
+        <h2>Tea</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="tea">
+            <div class="menu-info">
+                <div>
+                    <div class="menu-name">Milk Tea</div>
+                </div>
+                <div class="price">₹25</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Milk Tea',25)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="tea">
+            <div class="menu-info">
+                <div class="menu-name">Black Tea</div>
+                <div class="price">₹20</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Black Tea',20)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="tea">
+            <div class="menu-info">
+                <div class="menu-name">Lemon Tea</div>
+                <div class="price">₹30</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Lemon Tea',30)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="tea">
+            <div class="menu-info">
+                <div class="menu-name">Green Tea</div>
+                <div class="price">₹40</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Green Tea',40)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="tea">
+            <div class="menu-info">
+                <div class="menu-name">Blue Tea</div>
+                <div class="price">₹40</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Blue Tea',40)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="tea">
+            <div class="menu-info">
+                <div class="menu-name">Ice Green Tea</div>
+                <div class="price">₹50</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Ice Green Tea',50)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="tea">
+            <div class="menu-info">
+                <div class="menu-name">Ice Blue Tea</div>
+                <div class="price">₹60</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Ice Blue Tea',60)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="tea">
+            <div class="menu-info">
+                <div class="menu-name">Masala Ice Lemon Tea</div>
+                <div class="price">₹60</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Masala Ice Lemon Tea',60)">
+                + Add
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COFFEE -->
+
+<section class="menu-section" data-section="coffee">
+
+    <div class="section-heading">
+        <span>BREWED FRESH</span>
+        <h2>Coffee</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="coffee">
+            <div class="menu-info">
+                <div class="menu-name">Hot Coffee</div>
+                <div class="price">₹35</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Hot Coffee',35)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="coffee">
+            <div class="menu-info">
+                <div class="menu-name">Black Coffee</div>
+                <div class="price">₹30</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Black Coffee',30)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="coffee">
+            <div class="menu-info">
+                <div class="menu-name">Ice Black Coffee</div>
+                <div class="price">₹40</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Ice Black Coffee',40)">
+                + Add
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COLD COFFEE -->
+
+<section class="menu-section" data-section="coffee">
+
+    <div class="section-heading">
+        <span>CHILLED & CREAMY</span>
+        <h2>Cold Coffee</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="coffee">
+            <div class="menu-info">
+                <div class="menu-name">Regular Cold Coffee</div>
+                <div class="price">₹100</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Regular Cold Coffee',100)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="coffee">
+            <div class="menu-info">
+                <div class="menu-name">
+                    Cold Coffee Ice Cream
+                    <div class="menu-description">
+                        Vanilla / Butter / Chocolate / Strawberry
+                    </div>
+                </div>
+                <div class="price">₹120+</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="coffee">
+            <div class="menu-info">
+                <div class="menu-name">Cold Coffee with KitKat</div>
+                <div class="price">₹120</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Cold Coffee with KitKat',120)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="coffee">
+            <div class="menu-info">
+                <div class="menu-name">Cold Coffee with Oreo</div>
+                <div class="price">₹120</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Cold Coffee with Oreo',120)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="coffee">
+            <div class="menu-info">
+                <div class="menu-name">Cold Coffee with Mixed Nut</div>
+                <div class="price">₹120</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Cold Coffee with Mixed Nut',120)">
+                + Add
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FISH -->
+
+<section class="menu-section" data-section="fish">
+
+    <div class="section-heading">
+        <span>FROM THE SEA</span>
+        <h2>Fish</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="fish">
+            <div class="menu-info">
+                <div class="menu-name">Fish Fry <small>(1PC / 2PC)</small></div>
+                <div class="price">₹110/200</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Fish Fry',110)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="fish">
+            <div class="menu-info">
+                <div class="menu-name">Fish Finger (5PC)</div>
+                <div class="price">₹200</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Fish Finger',200)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="fish">
+            <div class="menu-info">
+                <div class="menu-name">Chilli Fish</div>
+                <div class="price">₹180</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Chilli Fish',180)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="fish">
+            <div class="menu-info">
+                <div class="menu-name">Paper Fish</div>
+                <div class="price">₹160</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Paper Fish',160)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="fish">
+            <div class="menu-info">
+                <div class="menu-name">Sezwan Fish</div>
+                <div class="price">₹180</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Sezwan Fish',180)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="fish">
+            <div class="menu-info">
+                <div class="menu-name">Korian Fish (5PC)</div>
+                <div class="price">₹180</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Korian Fish',180)">
+                + Add
+            </button>
+        </div>
+
+        <div class="menu-card" data-category="fish">
+            <div class="menu-info">
+                <div class="menu-name">Cheesy Fish Ball (6PC)</div>
+                <div class="price">₹160</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Cheesy Fish Ball',160)">
+                + Add
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CHICKEN -->
+
+<section class="menu-section" data-section="chicken">
+
+    <div class="section-heading">
+        <span>SIGNATURE</span>
+        <h2>Chicken</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Popcorn</div>
+                <div class="price">₹140</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Chicken Popcorn',140)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Lollipop (4PC)</div>
+                <div class="price">₹150</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Chicken Lollipop',150)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Pakora (7PC)</div>
+                <div class="price">₹120</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Chicken Pakora',120)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Drams of Heaven (5PC)</div>
+                <div class="price">₹220</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Drams of Heaven',220)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Barbecue Chicken (5PC)</div>
+                <div class="price">₹180</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Barbecue Chicken',180)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Chilli Chicken (6PC)</div>
+                <div class="price">₹160</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Chilli Chicken',160)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Manchurian (6PC)</div>
+                <div class="price">₹170</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Chicken Manchurian',170)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Schezwan Chicken (6PC)</div>
+                <div class="price">₹180</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Schezwan Chicken',180)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Garlic Chicken (6PC)</div>
+                <div class="price">₹170</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Garlic Chicken',170)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Sweet Garlic Chicken (6PC)</div>
+                <div class="price">₹180</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Sweet Garlic Chicken',180)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Nuggets (5PC)</div>
+                <div class="price">₹160</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Chicken Nuggets',160)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Salt & Paper (6PC)</div>
+                <div class="price">₹160</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Chicken Salt & Paper',160)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Green Fried Chicken (6PC)</div>
+                <div class="price">₹180</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Green Fried Chicken',180)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Cheesy Chicken Ball (6PC)</div>
+                <div class="price">₹150</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Cheesy Chicken Ball',150)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="chicken">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Hot Wings (5PC)</div>
+                <div class="price">₹200</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Chicken Hot Wings',200)">+ Add</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PASTA -->
+
+<section class="menu-section" data-section="pasta">
+
+    <div class="section-heading">
+        <span>ITALIAN FAVOURITES</span>
+        <h2>Pasta</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="pasta">
+            <div class="menu-info">
+                <div class="menu-name">Alfredo Pasta (Veg / Chi)</div>
+                <div class="price">₹160/180</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="pasta">
+            <div class="menu-info">
+                <div class="menu-name">Arrabbiata Pasta (Veg / Chi)</div>
+                <div class="price">₹160/180</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="pasta">
+            <div class="menu-info">
+                <div class="menu-name">Mamaros Pasta (Veg / Chi)</div>
+                <div class="price">₹180/200</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MOMO -->
+
+<section class="menu-section" data-section="momo">
+
+    <div class="section-heading">
+        <span>STEAMED & FRIED</span>
+        <h2>Momo</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="momo">
+            <div class="menu-info">
+                <div class="menu-name">Veg Momo (5PC)</div>
+                <div class="price">₹70</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Veg Momo',70)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="momo">
+            <div class="menu-info">
+                <div class="menu-name">Stream Momo (5PC)</div>
+                <div class="price">₹90</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Steam Momo',90)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="momo">
+            <div class="menu-info">
+                <div class="menu-name">Fried Momo (5PC)</div>
+                <div class="price">₹100</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Fried Momo',100)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="momo">
+            <div class="menu-info">
+                <div class="menu-name">Pan Fried Momo (5PC)</div>
+                <div class="price">₹120</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Pan Fried Momo',120)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="momo">
+            <div class="menu-info">
+                <div class="menu-name">Green Pan Fried Momo</div>
+                <div class="price">₹140</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Green Pan Fried Momo',140)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="momo">
+            <div class="menu-info">
+                <div class="menu-name">Schezwan Momo (5PC)</div>
+                <div class="price">₹140</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Schezwan Momo',140)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="momo">
+            <div class="menu-info">
+                <div class="menu-name">Cheesy Malai Momo (5PC)</div>
+                <div class="price">₹150</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Cheesy Malai Momo',150)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="momo">
+            <div class="menu-info">
+                <div class="menu-name">Extra Soup</div>
+                <div class="price">₹40</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NOODLES -->
+
+<section class="menu-section" data-section="noodles">
+
+    <div class="section-heading">
+        <span>WOK SPECIAL</span>
+        <h2>Noodles</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="noodles">
+            <div class="menu-info">
+                <div class="menu-name">Maggie</div>
+                <div class="price">₹50</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Maggie',50)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="noodles">
+            <div class="menu-info">
+                <div class="menu-name">Egg Maggie</div>
+                <div class="price">₹70</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Egg Maggie',70)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="noodles">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Maggie</div>
+                <div class="price">₹100</div>
+            </div>
+            <button class="add-btn" onclick="addItem('Chicken Maggie',100)">+ Add</button>
+        </div>
+
+        <div class="menu-card" data-category="noodles">
+            <div class="menu-info">
+                <div>
+                    <div class="menu-name">Hakka Noodles</div>
+                    <div class="menu-description">
+                        Veg / Egg / Chicken / Mix
+                    </div>
+                </div>
+                <div class="price">₹90+</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="noodles">
+            <div class="menu-info">
+                <div>
+                    <div class="menu-name">Singapore Noodles</div>
+                    <div class="menu-description">
+                        Veg / Egg / Chicken / Mix
+                    </div>
+                </div>
+                <div class="price">₹100+</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="noodles">
+            <div class="menu-info">
+                <div>
+                    <div class="menu-name">Schezwan Noodles</div>
+                    <div class="menu-description">
+                        Egg / Chicken / Mix
+                    </div>
+                </div>
+                <div class="price">₹120+</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="noodles">
+            <div class="menu-info">
+                <div>
+                    <div class="menu-name">Basil Noodles</div>
+                    <div class="menu-description">
+                        Egg / Chicken / Mix
+                    </div>
+                </div>
+                <div class="price">₹120+</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SANDWICH -->
+
+<section class="menu-section">
+
+    <div class="section-heading">
+        <span>LIGHT BITES</span>
+        <h2>Sandwich</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Veg Sandwich</div>
+                <div class="price">₹100</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Sandwich</div>
+                <div class="price">₹120</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Sandwich with Cheese</div>
+                <div class="price">₹150</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Mushroom Sandwich</div>
+                <div class="price">₹160</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Extra Cheese</div>
+                <div class="price">₹30</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RICE -->
+
+<section class="menu-section" data-section="rice">
+
+    <div class="section-heading">
+        <span>RICE SPECIAL</span>
+        <h2>Rice</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="rice">
+            <div class="menu-info">
+                <div class="menu-name">Jira Rice</div>
+                <div class="price">₹80</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="rice">
+            <div class="menu-info">
+                <div class="menu-name">
+                    Fried Rice
+                    <div class="menu-description">
+                        Egg / Chicken / Mix
+                    </div>
+                </div>
+                <div class="price">₹130+</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="rice">
+            <div class="menu-info">
+                <div class="menu-name">
+                    Basil Fried Rice
+                    <div class="menu-description">
+                        Egg / Chicken / Mix
+                    </div>
+                </div>
+                <div class="price">₹140+</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VEG APPETIZER -->
+
+<section class="menu-section">
+
+    <div class="section-heading">
+        <span>CRISPY & DELICIOUS</span>
+        <h2>Veg Appetizer</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">French Fries</div>
+                <div class="price">₹90</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Peri Peri French Fry</div>
+                <div class="price">₹120</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Honey Chilli Potato</div>
+                <div class="price">₹140</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Crispy Chilli Baby Corn</div>
+                <div class="price">₹160</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Dry Chilli Mushroom</div>
+                <div class="price">₹180</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Mushroom Pakora (8PC)</div>
+                <div class="price">₹160</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Veg Chessy Ball</div>
+                <div class="price">₹120</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Paneer Pakora</div>
+                <div class="price">₹140</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Paneer Cheesy Ball</div>
+                <div class="price">₹150</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Chili Paneer (6PC)</div>
+                <div class="price">₹160</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MILK SHAKE -->
+
+<section class="menu-section" data-section="drinks">
+
+    <div class="section-heading">
+        <span>THICK & CREAMY</span>
+        <h2>Milk Shake</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Pesta Shake</div>
+                <div class="price">₹130</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Oreo Shake</div>
+                <div class="price">₹120</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">KitKat Shake</div>
+                <div class="price">₹120</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Strawberry Shake</div>
+                <div class="price">₹130</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Chocolate Shake</div>
+                <div class="price">₹130</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Mix Nuts Shake</div>
+                <div class="price">₹160</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MOCKTAIL -->
+
+<section class="menu-section" data-section="drinks">
+
+    <div class="section-heading">
+        <span>REFRESHING</span>
+        <h2>Mocktail</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Fresh Lime Soda</div>
+                <div class="price">₹80</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Mint Mojito</div>
+                <div class="price">₹100</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Strawberry Haven</div>
+                <div class="price">₹100</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Pineapple Crush</div>
+                <div class="price">₹100</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Blueberry Crush</div>
+                <div class="price">₹110</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Kiwi Crush</div>
+                <div class="price">₹110</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Green Mint Mojito</div>
+                <div class="price">₹120</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Blue Lagon</div>
+                <div class="price">₹110</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+            <div class="menu-info">
+                <div class="menu-name">Mixed Soda</div>
+                <div class="price">₹120</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SOFT DRINK -->
+
+<section class="menu-section">
+
+    <div class="section-heading">
+        <span>CHILLED</span>
+        <h2>Soft Drinks</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Mineral Water</div>
+                <div class="price">₹10/20</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Coke</div>
+                <div class="price">₹40</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Sprite</div>
+                <div class="price">₹40</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Masala Coke</div>
+                <div class="price">₹60</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Masala Sprite</div>
+                <div class="price">₹60</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DESSERT -->
+
+<section class="menu-section" data-section="dessert">
+
+    <div class="section-heading">
+        <span>SWEET ENDING</span>
+        <h2>Dessert</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" data-category="dessert">
+            <div class="menu-info">
+                <div class="menu-name">Chocolate Ice Cream (2 Scoop)</div>
+                <div class="price">₹90</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="dessert">
+            <div class="menu-info">
+                <div class="menu-name">Vanila Ice Cream (2 Scoop)</div>
+                <div class="price">₹80</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="dessert">
+            <div class="menu-info">
+                <div class="menu-name">Strawberry Ice Cream</div>
+                <div class="price">₹100</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="dessert">
+            <div class="menu-info">
+                <div class="menu-name">Butterscotch Ice Cream (2 Scoop)</div>
+                <div class="price">₹100</div>
+            </div>
+        </div>
+
+        <div class="menu-card" data-category="dessert">
+            <div class="menu-info">
+                <div class="menu-name">Mixed Nut Ice Cream (5 Scoop)</div>
+                <div class="price">₹150</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SOUP -->
+
+<section class="menu-section">
+
+    <div class="section-heading">
+        <span>WARM & COMFORTING</span>
+        <h2>Soup</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Mushroom Soup</div>
+                <div class="price">₹100</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Oil Free Veg Soup</div>
+                <div class="price">₹100</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Manchow Soup</div>
+                <div class="price">₹120</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Hot & Sour Soup</div>
+                <div class="price">₹120</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SALAD -->
+
+<section class="menu-section">
+
+    <div class="section-heading">
+        <span>FRESH & HEALTHY</span>
+        <h2>Salad</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Green Salad</div>
+                <div class="price">₹60</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Toasted Salad</div>
+                <div class="price">₹150</div>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="menu-info">
+                <div class="menu-name">Chicken Salad</div>
+                <div class="price">₹180</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="no-results" id="noResults">
+    No menu items found.
+</div>
+
+</main>
+
+
+<!-- =========================
+     ORDER PANEL
+========================= -->
+
+<div class="order-panel" id="orderPanel">
+
+    <div class="order-title">
+
+        <h3>Your Order</h3>
+
+        <button
+            class="close-order"
+            onclick="toggleOrder()">
+            ×
+        </button>
+
+    </div>
+
+    <div id="orderItems">
+        <p style="color:#666;font-size:12px;">
+            Your order is empty.
+        </p>
+    </div>
+
+    <div class="total">
+
+        <span>Total</span>
+
+        <span>
+            ₹<span id="totalPrice">0</span>
+        </span>
+
+    </div>
+
+    <button
+        class="order-now"
+        onclick="placeOrder()">
+
+        Place Order
+
+    </button>
+
+</div>
+
+
+<button
+    class="floating-order"
+    onclick="toggleOrder()">
+
+    🛒
+
+</button>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>The Sky Lounge</h2>
+
+    <p>
+        Rooftop JC Honda, Desbondhu Park, Habra
+    </p>
+
+    <p class="social">
+        FOLLOW US ON SOCIAL MEDIA
+    </p>
+
+    <p style="margin-top:30px;">
+        © 2026 The Sky Lounge. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const cards =
+        document.querySelectorAll(".menu-card");
+
+    const sections =
+        document.querySelectorAll(".menu-section");
+
+    const noResults =
+        document.getElementById("noResults");
+
+
+    searchInput.addEventListener("input", function () {
+
+        const search =
+            this.value.toLowerCase().trim();
+
+        let visibleItems = 0;
+
+        cards.forEach(card => {
+
+            const name =
+                card.innerText.toLowerCase();
+
+            if (name.includes(search)) {
+
+                card.style.display = "";
+
+                visibleItems++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+        sections.forEach(section => {
+
+            const visibleCards =
+                section.querySelectorAll(
+                    ".menu-card:not([style*='display: none'])"
+                );
+
+            if (search !== "" && visibleCards.length === 0) {
+
+                section.style.display = "none";
+
+            } else {
+
+                section.style.display = "";
+
+            }
+
+        });
+
+        noResults.style.display =
+            visibleItems === 0 ? "block" : "none";
+
+    });
+
+
+    /* =========================
+       CATEGORY FILTER
+    ========================= */
+
+    const categoryButtons =
+        document.querySelectorAll(".category-btn");
+
+
+    categoryButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            categoryButtons.forEach(btn =>
+                btn.classList.remove("active")
+            );
+
+            this.classList.add("active");
+
+            const category =
+                this.dataset.category;
+
+            sections.forEach(section => {
+
+                if (
+                    category === "all" ||
+                    section.dataset.section === category
+                ) {
+
+                    section.style.display = "";
+
+                } else {
+
+                    section.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+    });
+
+
+    /* =========================
+       ORDER SYSTEM
+    ========================= */
+
+    let order = [];
+
+    let total = 0;
+
+
+    function addItem(name, price) {
+
+        order.push({
+            name: name,
+            price: price
+        });
+
+        total += price;
+
+        updateOrder();
+
+        document
+            .getElementById("orderPanel")
+            .classList.add("show");
+
+    }
+
+
+    function updateOrder() {
+
+        const orderItems =
+            document.getElementById("orderItems");
+
+        const totalPrice =
+            document.getElementById("totalPrice");
+
+        if (order.length === 0) {
+
+            orderItems.innerHTML =
+                `<p style="color:#666;font-size:12px;">
+                    Your order is empty.
+                </p>`;
+
+        } else {
+
+            orderItems.innerHTML = "";
+
+            order.forEach((item, index) => {
+
+                const div =
+                    document.createElement("div");
+
+                div.className = "order-item";
+
+                div.innerHTML = `
+                    <span>
+                        ${index + 1}. ${item.name}
+                    </span>
+
+                    <span>
+                        ₹${item.price}
+                    </span>
+                `;
+
+                orderItems.appendChild(div);
+
+            });
+
+        }
+
+        totalPrice.innerText = total;
+
+    }
+
+
+    /* =========================
+       TOGGLE ORDER
+    ========================= */
+
+    function toggleOrder() {
+
+        document
+            .getElementById("orderPanel")
+            .classList.toggle("show");
+
+    }
+
+
+    /* =========================
+       PLACE ORDER
+    ========================= */
+
+    function placeOrder() {
+
+        if (order.length === 0) {
+
+            alert("Please add some items first.");
+
+            return;
+
+        }
+
+        let message =
+            "Hello The Sky Lounge!%0A%0A";
+
+        message +=
+            "*My Order:*%0A";
+
+        order.forEach((item, index) => {
+
+            message +=
+                `${index + 1}. ${item.name} - ₹${item.price}%0A`;
+
+        });
+
+        message +=
+            `%0A*Total: ₹${total}*`;
+
+        /*
+            Replace the number below
+            with your restaurant's WhatsApp number.
+
+            Example:
+            919876543210
+        */
+
+        const phone =
+            "919999999999";
+
+        const url =
+            `https://wa.me/${phone}?text=${message}`;
+
+        window.open(url, "_blank");
+
+    }
+
+</script>
+
+</body>
+</html>
